@@ -14,10 +14,9 @@ function App(){
         async function getData(){
             const data = await fetchData();
             setData(data);
-            console.log(fetchedData);
         }
         getData();
-    }, []);
+    },[]);
 
     async function handleCountryChange(country){
         setCountry(country);
