@@ -7,6 +7,8 @@ import CoronaImage from './Images/image.png';
 
 function App(){
     const [fetchedData, setData] = useState({});
+    const [fetchedCountry, setCountry] = useState('');
+    
 
     useEffect(() => {
         async function getData(){
@@ -17,12 +19,23 @@ function App(){
         getData();
     }, []);
 
+    async function handleCountryChange(country){
+        setCountry(country);
+        const data = await fetchData(country);
+        setData(data);
+    }
+
     return(
         <div className={styles.container}>
             <img className={styles.image} src={CoronaImage} alt=""/>
             <Cards data= { fetchedData }/>
-            <CountryPicker />
-            <Chart />
+            <CountryPicker 
+            handleCountries={handleCountryChange}
+            />
+            <Chart
+                data={fetchedData} 
+                country={fetchedCountry}
+            />
         </div>
     )
 }

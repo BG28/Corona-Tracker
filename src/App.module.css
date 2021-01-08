@@ -11,22 +11,17 @@ body{
 
 .image{
     margin-top: 50px;
+    width: 100%;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 480px){
     .image{
-        width: 90vw;
+        width: 50vw;
     }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 900px){
     .image{
-        width: 40vw;
-    }
-}
-
-@media screen and (min-width: 1140px){
-    .image{
-        width: 30vw;
+        width: 20vw;    
     }
 }
